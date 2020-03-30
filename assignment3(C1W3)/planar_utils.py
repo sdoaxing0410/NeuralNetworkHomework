@@ -10,8 +10,8 @@ def plot_decision_boundary(model, X, y):
     y_min, y_max = X[1, :].min() - 1, X[1, :].max() + 1
     h = 0.01
     # Generate a grid of points with distance h between them
-    xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h))
-    # Predict the function value for the whole grid
+    xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h)) # np.meshgrid:生成网格点坐标矩阵
+    # Predict the function value for the whole grid 
     Z = model(np.c_[xx.ravel(), yy.ravel()])
     Z = Z.reshape(xx.shape)
     # Plot the contour and training examples
